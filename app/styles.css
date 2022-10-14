@@ -49,6 +49,14 @@ img {
     height: auto;
 }
 
+.mb-1rem {
+    margin-bottom: 1rem !important;
+}
+
+.pb-1rem {
+    padding-bottom: 1rem !important;
+}
+
 /*******************************/
 
 .container {
@@ -61,9 +69,14 @@ img {
     border: 2px solid var(--dark-gray-color);
 }
 
+.left__resp,
 .left {
     background-color: var(--gray-color);
     color: white;
+}
+
+.left__resp {
+    display: none;
 }
 
 .left__image {
@@ -113,7 +126,6 @@ img {
     padding-left: 2rem;
     margin-bottom: 0.5rem;
 }
-
 
 .left__personality,
 .left__certificates {
@@ -182,7 +194,6 @@ img {
     --border-radius: 0.75rem;
     --border-radius-negative: calc(var(--border-radius) * -1)
 }
-
 
 .right__name {
     margin-top: 2rem;
@@ -400,50 +411,71 @@ img {
         border: none;
     }
 
-    .left__image {
-        height: auto;
+    .right__title {
+        margin-bottom: 0;
     }
 
-    .left,
-    .left__title {
-        background-color: var(--dark-gray-color);
+    .left {
+        display: none;
     }
 
     .left__image-box {
+        bottom: 0;
         top: 80%;
-        right: 0;
     }
 
-    .left__name,
-    .left__location,
-    .left__phone,
-    .left__email,
-    .left__personality,
-    .left__certificates,
-    .left__links {
-        display: none;
+    .left__image {
+        height: 100%;
+    }
+
+    .left__resp {
+        display: flex;
+    }
+
+    .left__resp > * {
+        flex: 1;
+    }
+
+    .left__certificates-description {
+        margin-top: 2rem;
     }
 
     .right__skills-list {
         grid-template-columns: repeat(3, 1fr) !important;
     }
 
-    .right__name,
     .right__education,
     .right__work,
     .right__skills {
         padding: 0 2rem;
     }
+
+    .right__name,
+    .right__title {
+        display: none;
+    }
 }
 
-@media (max-width: 653px) {
+@media (max-width: 550px) {
 
-    .left__image {
-        width: 100%;
-        object-fit: cover;
+    .left__resp {
+        display: none;
+    }
+
+    .left {
+        display: unset;
+    }
+
+    .right {
+        margin-top: 1rem;
     }
 
     .right__skills-list {
         grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .left__image-box {
+        bottom: 7px;
+        right: 0;
     }
 }
