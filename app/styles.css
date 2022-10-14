@@ -26,7 +26,6 @@ body {
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     font-weight: 200;
-    /*background-color: var(--body-color);*/
     color: var(--dark-gray-color);
     transition: 0.4s;
 }
@@ -69,6 +68,8 @@ img {
 
 .left__image {
     filter: grayscale(1);
+    height: 430px;
+    object-fit: cover;
 }
 
 .left__image-container {
@@ -152,8 +153,11 @@ img {
     display: flex;
     column-gap: 1rem;
     align-items: center;
-    padding-left: 2rem;
     margin-bottom: 1rem;
+}
+
+.left__links-list {
+    padding: 0 2rem;
 }
 
 .left__links-icon {
@@ -167,7 +171,6 @@ img {
     background-color: var(--dark-gray-color);
     color: white;
     width: 100%;
-    margin-right: 2rem;
     font-weight: 400;
 }
 
@@ -197,6 +200,14 @@ img {
 
 .right__app-name {
     font-size: 1.15rem;
+}
+
+.right__app-name-link:link,
+.right__app-name-link:visited,
+.right__app-name-link:hover,
+.right__app-name-link:active {
+    text-decoration: underline;
+    color: var(--dark-gray-color);
 }
 
 .right__app-description {
@@ -270,10 +281,10 @@ img {
     position: absolute;
     content: '';
     background-color: var(--dark-gray-color);
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
     border-radius: 50%;
-    left: -53px;
+    left: -55px;
     top: 6px;
 }
 
@@ -356,4 +367,16 @@ img {
     border-top-right-radius: 200% 100%;
     border-bottom-right-radius: 200% 100%;
     border-left: 0;
+}
+
+.half-right .right__skills-circle::before {
+    content: '';
+    position: absolute;
+    inset: var(--border-radius-negative) 50% var(--border-radius-negative) var(--border-radius-negative) ;
+    z-index: 1;
+
+    border: var(--border-radius) solid var(--light-gray-color);
+    border-top-left-radius: 200% 100%;
+    border-bottom-left-radius: 200% 100%;
+    border-right: 0;
 }
